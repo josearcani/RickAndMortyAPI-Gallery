@@ -50,16 +50,23 @@ a {
   color: #ffd661;
   font-weight: lighter;
 }
+img {
+  display: block;
+  width: 100%;
+}
 
 h1,
 h2,
 h3,
 h4 {
-  letter-spacing: .1rem;
+  letter-spacing: .125rem;
   text-transform: capitalize;
   font-family: var(--ff-primary);
   color: var(--clr-white);
-  padding-bottom: 1em;
+  padding-bottom: .4em;
+}
+p {
+  text-transform: capitalize;
 }
 
 /* header */
@@ -122,4 +129,114 @@ h4 {
 .header__nav-item a {
   font-weight: bolder;
   font-size: .9rem;
+}
+
+/* info-section */
+
+.info-section {
+  padding-top: 1em;
+}
+
+.info-section__btns {
+  min-width: 300px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.filter-btn {
+  display: inline-block;
+  background-color: #19b5fe;
+  min-width: 30px;
+  padding: .5em;
+  border: none;
+  border-radius: 5px;
+  color: var(--primary-black);
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+/* card-section */
+
+.card-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  display: flex;
+  position: relative;
+  padding: .5em;
+  background-color: var(--secondary-black);
+  border-radius: 5px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.img-container {
+  width: 40%;
+}
+.card-item__info {
+  width: 60%;
+  padding-left: .5em;
+}
+
+.card-item__info h4 {
+  color: #b7b7b7;
+  font-size: 6vw;
+}
+
+.card-item__info > p {
+  font-size: 4vw;
+  margin-bottom: .3em;
+  color: #b7b7b7;
+  font-weight: bold;
+}
+.card-item__info p > span {
+  font-weight: initial;
+}
+
+.card-item .status {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+  padding: .3em 1em;
+  font-size: 2vw;
+  border-radius: 10px;
+  color: #b7b7b7;
+}
+
+.card-item .alive {
+  background-color: var(--portal-green);
+}
+
+
+.card-item .dead {
+  background-color: #c31e1e;
+}
+
+.card-item .unknown {
+  background-color: #eec436;
+  color: var(--clr-black);
+}
+
+
+@media (min-width: 448px) {
+  .card-item__info h4 {
+    font-size: 1.625rem;
+  }
+  .card-item__info > p {
+    font-size: 1rem;
+  }
+  .card-item .status {
+    font-size: .625rem;
+  }
 }
