@@ -1,0 +1,125 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme&family=Space+Mono&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  --primary-blue: #0daac9;
+  --portal-green: #008034;
+  --portal-light-green: #94c128;
+  --morty-shirt: #f6e72f;
+  --mortt-shirt-shadow:#becf43;
+  --primary-black: #24282f;
+  --secondary-black: #3c3e44;
+  --clr-white: #fff;
+  --clr-black: #222;
+  --ff-primary: 'BioRhyme', serif;
+  --ff-secondary: 'Space Mono', monospace;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background-color: var(--primary-black);
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #ffd661;
+  font-weight: lighter;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: .1rem;
+  text-transform: capitalize;
+  font-family: var(--ff-primary);
+  color: var(--clr-white);
+  padding-bottom: 1em;
+}
+
+/* header */
+
+.header {
+  height: 360px;
+  background-image: url(../rickandmorty-wallpaper.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--clr-white);
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  background-color: var(--clr-black);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  opacity: .65;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header__title,
+.header__nav {
+  z-index: 3;
+  position: relative;
+}
+
+.header__title {
+  text-align: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2em;
+}
+
+.header__title p {
+  padding-bottom: 1.5em;
+}
+
+.header__btn {
+  padding: 1em;
+  font-family: var(--ff-primary);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, .75);
+}
+
+.header__nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__nav-item a {
+  font-weight: bolder;
+  font-size: .9rem;
+}
