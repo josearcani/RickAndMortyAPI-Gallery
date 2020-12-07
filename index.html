@@ -6,13 +6,17 @@
   <title>API Rick and Morty &copy;</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 768px)">
+  <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1000px)">
 </head>
 <body>
+  <div class="preloader hide-preloader">
+    <img src="preloader.gif" alt="preloader" class="preloader__item" />
+  </div>
   <header class="header">
     <div class="header__title">
       <h1>Rick and morty</h1>
       <p>A fully responsive gallery for the Rick and Morty fans</p>
-      <button class="header__btn">continue</button>
+      <a href="#about" class="header__btn">continue</a>
     </div>
     <nav class="header__nav">
       <ul>
@@ -22,6 +26,18 @@
       </ul>
     </nav>
   </header>
+  <!-- info -->
+  <div>
+    <article class="api-info">
+      <span class="left"></span>
+      <div class="api-info__text">
+        <p>total <span>111</span></p>
+        <p>pages <span>34</span></p>
+        <p>you are on page <span>1</span></p>
+      </div>
+      <span class="right"></span>
+    </article>
+  </div>
   <!-- secction -->
   <section class="info-section">
     <!-- buttons -->
@@ -40,43 +56,55 @@
         </figure>
         <div class="card-item__info">
           <h4>rick sanchez</h4>
-          <p>species: <span id="species">human</span></p>
-          <p>gender: <span id="gender">male</span></p>
+          <p>species: <span>human</span></p>
+          <p>gender: <span>male</span></p>
         </div>
         <p class="status alive">alive</p>
       </article>
       <!-- single-item -->
       <article class="card-item">
         <figure class="img-container">
-          <img src="./avatar1.jpeg" alt="character-img" class="card-item__img">
+          <img src="./avatar2.jpeg" alt="character-img" class="card-item__img">
         </figure>
         <div class="card-item__info">
-          <h4>fart</h4>
-          <p>species: <span id="species">gas</span></p>
-          <p>gender: <span id="gender">unknown</span></p>
+          <h4>tony's wife</h4>
+          <p>species: <span>alien</span></p>
+          <p>gender: <span>female</span></p>
         </div>
         <p class="status dead">dead</p>
       </article>
       <!-- single-item -->
       <article class="card-item">
         <figure class="img-container">
-          <img src="./avatar1.jpeg" alt="character-img" class="card-item__img">
+          <img src="./avatar3.jpeg" alt="character-img" class="card-item__img">
         </figure>
         <div class="card-item__info">
-          <h4>rick c-200</h4>
-          <p>species: <span id="species">human</span></p>
-          <p>gender: <span id="gender">male</span></p>
+          <h4>steve phillips</h4>
+          <p>species: <span>alien</span></p>
+          <p>gender: <span>male</span></p>
         </div>
         <p class="status unknown">unknown</p>
       </article>
       <!-- single-item -->
       <article class="card-item">
         <figure class="img-container">
-          <img src="./avatar1.jpeg" alt="character-img" class="card-item__img">
+          <img src="./avatar2.jpeg" alt="character-img" class="card-item__img">
         </figure>
         <div class="card-item__info">
-          <h4>poppy butholqsss</h4>
-          <p>species: <span id="species">humanoind</span></p>
+          <h4>tony's wife</h4>
+          <p>species: <span id="species">alien</span></p>
+          <p>gender: <span id="gender">female</span></p>
+        </div>
+        <p class="status dead">dead</p>
+      </article>
+      <!-- single-item -->
+      <article class="card-item">
+        <figure class="img-container">
+          <img src="./avatar3.jpeg" alt="character-img" class="card-item__img">
+        </figure>
+        <div class="card-item__info">
+          <h4>steve phillips</h4>
+          <p>species: <span id="species">alien</span></p>
           <p>gender: <span id="gender">male</span></p>
         </div>
         <p class="status unknown">unknown</p>
@@ -84,11 +112,24 @@
     </div>
   </section>
   <!-- about-me -->
-  <section>
-    I'm a web developer
+  <section id="about" class="contact-section">
+    <ul>
+      <li>pendientes</li>
+      <li>algo </li>
+      <li>What's the purpose of this section?</li>
+      <li>don't know yet</li>
+      <li>hi! </li>
+    </ul>
   </section>
   <footer>
+    <div></div>
+    <ul>
+      <li>hola</li>
+      <li>hola</li>
+      <li>hola</li>
+    </ul>
     hi i'm the footer
   </footer>
+  <script src="./js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+/* width  contaniner */
+.card-container {
+  max-width: 950px;
+}
+
+/* floating info-card */
+.api-info {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 10;
+} 

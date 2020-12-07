@@ -1,17 +1,53 @@
+/* width container */
 .card-container {
   max-width: 750px;
 }
 
+/* header-btn */
+.header__btn {
+  max-width: 250px;
+}
+
+/* new style for cards */
 .card-item {
   flex-direction: column;
   padding: .8em;
   width: 220px;
 }
 
-.img-container {
-  width: 100%;
-}
+.img-container,
 .card-item__info {
   width: 100%;
 }
 
+.card-item__info {
+  margin-bottom: 2em;
+}
+
+.info-section__btns {
+  max-width: 580;
+}
+
+.card-item .status {
+  font-size: .75rem;
+}
+
+/* info-card */
+.api-info {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 65px;
+  grid-template-areas: 
+  'info info'
+  'left right';
+} 
+
+.api-info__text {
+  grid-area: info;
+  padding: 1em;
+}
+.left {
+  grid-area: left;
+}
+.right {
+  grid-area: right;
+}
