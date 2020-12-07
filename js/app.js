@@ -1,6 +1,7 @@
 const c = console.log
 let pageCount = 1
 let totalPages  /* this if for limiting the pages */
+let toFilter 
 const infoContainer = document.querySelector('.api-info__text')
 const btnsContainer = document.querySelector('.info-section__btns')
 const cardsContainer = document.querySelector('.card-container')
@@ -26,8 +27,10 @@ window.addEventListener('DOMContentLoaded', function() {
       console.error(`un error chingon ${error}`) 
     } else {
       // c(data['info'].pages)
-      totalPages = data['info'].pages /* to limi the cicle when reaching the last and first page */
+      totalPages = data['info'].pages /* to limit the cicle when reaching the last and first page */
+      toFilter = data.results
       printInfoData(data.info)
+      printBtns(data.results)
       printCharacters(data.results)
     }
   })
@@ -42,9 +45,47 @@ function printInfoData(infoData) {
   infoContainer.innerHTML = info
 }
 
+/* to print the filter buttons */
+function printBtns(data) {
+  const status = data.reduce(
+    function (total, item) {
+      if (!total.includes(item.status)) {
+        total.push(item.status);
+      }
+      return total;
+    },
+    ["all"]
+  )
+  c(status)
+  const btnToPrint = status.map((item) => {
+    return `<button class="filter-btn" type="button" data-id=${item.toLowerCase()}>${item}</button>`
+  }).join('')
+  btnsContainer.innerHTML = btnToPrint
+
+  const filterBtns = document.querySelectorAll('.filter-btn')
+  // c(filterBtns)
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      const category = e.currentTarget.dataset.id
+      const charCategory = toFilter.filter(function(item) {
+        if (item.status.toLowerCase() === category) {
+          return item
+        }
+      })
+      // c(category)
+      // c(charCategory)
+      if (category === 'all') {
+        printCharacters(toFilter)
+      } else {
+        printCharacters(charCategory)
+      }
+    })
+  })
+}
+
 /* to print the cards */
 function printCharacters(charData) {
-  c(charData)
+  // c(charData)
   const data = charData.map(function(character) {
     return `<article class="card-item">
     <figure class="img-container">
@@ -95,7 +136,9 @@ right.addEventListener('click', function() {
       console.error(`un error chingon ${error}`) 
     } else {
       // c(data['info'])
+      toFilter = data.results
       printInfoData(data.info)
+      printCharacters(data.results)
     }
   })
 })
@@ -113,7 +156,9 @@ left.addEventListener('click', function() {
       console.error(`un error chingon ${error}`) 
     } else {
       // c(data['info'])
+      toFilter = data.results
       printInfoData(data.info)
+      printCharacters(data.results)
     }
   })
 })
