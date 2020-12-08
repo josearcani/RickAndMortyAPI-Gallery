@@ -11,6 +11,9 @@ const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 // c(left, right)
 
+/* fixing current year */
+const year = document.getElementById('year')
+year.innerHTML = new Date().getFullYear()
 
 const URL = "https://rickandmortyapi.com/api/episode"
 const URL_PAGE = "/?page=:id"
@@ -27,7 +30,7 @@ const getAPIdata = (apiUrl) => {
     request.open('GET', apiUrl)
     request.responseType = 'json'
     request.onreadystatechange = () => {
-      if (request.readyState === request.DONE) {
+      if (request.readyState === request.DONE) {  /* request.DONE = 4 */
         request.status === 200
         ? resolve(request.response)
         : reject(new Error('Test Error'))

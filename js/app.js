@@ -12,6 +12,9 @@ const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 // c(left, right)
 
+/* fixing current year */
+const year = document.getElementById('year')
+year.innerHTML = new Date().getFullYear()
 
 const URL = "https://rickandmortyapi.com/api/character"
 const URL_PAGE = "/?page=:id"

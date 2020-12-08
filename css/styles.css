@@ -98,7 +98,7 @@ p {
 
 .header {
   height: 360px;
-  background-image: url(../rickandmorty-wallpaper.jpg);
+  background-image: url(../assets/rickandmorty-wallpaper.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -343,9 +343,44 @@ p {
 /* footer */
 
 footer {
-  height: 200px;
-  background-color: #ffce5c;
+  height: 150px;
+  background-color: var(--portal-green);
+  color: #101114;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
 }
+
+footer a {
+  color: inherit;
+}
+.github,
+.twitter {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.twitter {
+  background-image: url(https://i.postimg.cc/dVW3mZfw/twitter.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.github {
+  background-image: url(https://i.postimg.cc/qvfvYb9v/github-logo-silhouette-in-a-square.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
 
 /* for minor corrections width weird width screen sizes */
 @media (min-width: 448px) {
@@ -390,5 +425,4 @@ footer {
   .api-info {
     font-size: 1.4rem;
   }
-
 }
