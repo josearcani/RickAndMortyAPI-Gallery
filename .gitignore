@@ -2,4 +2,4 @@
 *.jpeg
 *.png
 *.svg
-*.gif
+#*.gif

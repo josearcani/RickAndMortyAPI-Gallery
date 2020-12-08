@@ -6,6 +6,8 @@ const infoContainer = document.querySelector('.api-info__text')
 const btnsContainer = document.querySelector('.info-section__btns')
 const cardsContainer = document.querySelector('.card-container')
 
+const preloader = document.querySelector('.preloader')
+
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 // c(left, right)
@@ -20,20 +22,21 @@ const URL_PAGE = "/?page=:id"
 //   episodes:"https://rickandmortyapi.com/api/episode"
 // }
 
+window.addEventListener('load', function() {
+  preloader.classList.add('hide-preloader')
+})
 
-window.addEventListener('DOMContentLoaded', function() {
-  getAPIdata(URL, function(error, data) {
-    if (error) {
-      console.error(`un error chingon ${error}`) 
-    } else {
-      // c(data['info'].pages)
-      totalPages = data['info'].pages /* to limit the cicle when reaching the last and first page */
-      toFilter = data.results
-      printInfoData(data.info)
-      printBtns(data.results)
-      printCharacters(data.results)
-    }
-  })
+getAPIdata(URL, function(error, data) {
+  if (error) {
+    console.error(`un error chingon ${error}`) 
+  } else {
+    // c(data['info'].pages)
+    totalPages = data['info'].pages /* to limit the cicle when reaching the last and first page */
+    toFilter = data.results
+    printInfoData(data.info)
+    printBtns(data.results)
+    printCharacters(data.results)
+  }
 })
 
 /* to print info data */
@@ -56,7 +59,7 @@ function printBtns(data) {
     },
     ["all"]
   )
-  c(status)
+  // c(status)
   const btnToPrint = status.map((item) => {
     return `<button class="filter-btn" type="button" data-id=${item.toLowerCase()}>${item}</button>`
   }).join('')
@@ -148,7 +151,7 @@ left.addEventListener('click', function() {
   if (pageCount === 0) {
     pageCount = totalPages
   }
-  c(pageCount)
+  // c(pageCount)
   const myURL = `${URL}${URL_PAGE.replace(':id', pageCount)}`
   // c(myURL)
   getAPIdata(myURL, function(error, data) {
