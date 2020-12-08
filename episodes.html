@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Rick and Morty - Episodes</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 768px)">
+  <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1000px)">
+</head>
+<body>
+  <div class="preloader">
+    <img src="./preloader.gif" alt="preloader" class="preloader__item" />
+  </div>
+  <header class="header">
+    <div class="header__title">
+      <h1>Rick and morty</h1>
+      <p>A fully responsive gallery for the Rick and Morty fans</p>
+      <a href="#content" class="header__btn">episodes</a>
+    </div>
+    <nav class="header__nav">
+      <ul>
+        <li class="header__nav-item"><a href="./index.html">Characters</a></li>
+        <li class="header__nav-item"><a href="./locations.html">Locations</a></li>
+        <li class="header__nav-item"><a href="#">Episodes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- info -->
+  <section class="api-info">
+    <span class="left"></span>
+    <div class="api-info__text">
+      <p>total <span>10</span></p>
+      <p>pages <span>4</span></p>
+      <p>you are on page <span>1600</span></p>
+    </div>
+    <span class="right"></span>
+  </section>
+  <!-- container -->
+  <section id="content" class="info-section">
+    <!-- menu-characters-container -->
+    <div class="card-container">
+      <!-- single-item -->
+      <article class="card-item location">
+        <div class="card-location">
+          <p>n° <span>1</span></p>
+          <p>name: <span>pilot</span></p>
+          <p>air date: <span>December 2, 2013</span></p>
+          <p>episode: <span>S01E01</span></p>
+        </div>
+      </article>
+      <!-- single-item -->
+      <article class="card-item">
+        <div class="card-location">
+          <p>n° <span>1</span></p>
+          <p>name: <span>pilot</span></p>
+          <p>air date: <span>December 2, 2013</span></p>
+          <p>episode: <span>S01E01</span></p>
+        </div>
+      </article>
+      <!-- single-item -->
+      <article class="card-item">
+        <div class="card-location">
+          <p>n° <span>1</span></p>
+          <p>name: <span>pilot</span></p>
+          <p>air date: <span>December 2, 2013</span></p>
+          <p>episode: <span>S01E01</span></p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <script src="./js/async.js"></script>
+</body>
+</html>
