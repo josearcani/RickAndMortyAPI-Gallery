@@ -3,7 +3,7 @@ To build this project the [Rick and Morty API](https://rickandmortyapi.com/) was
 - It started with a mobile-first view then scaled to desktop sizes.
 - All made with HTML, CSS, and JavaScript.
 
-### Purspose
+### Purpose
 The target to this project was to consume an API using callbacks, promises and async-await.
 Every page has its own `.js` file
 - `index.html` (callbacks)
